@@ -43,7 +43,7 @@
 
 #if defined(CONFIG_HUAWEI_KERNEL)
 /* add log switch, control logmian ect logs can write in or not */
-static atomic_t log_switch = ATOMIC_INIT(USER_LOG_OFF);
+static atomic_t log_switch = ATOMIC_INIT(USER_LOG_ON);
 static int minor_of_exception = 0;
 static int minor_of_power = 0;
 #endif
@@ -913,7 +913,8 @@ static int __init logger_init(void)
 {
 	int ret;
 	/* for logcat control by nv */
-#ifdef CONFIG_HUAWEI_KERNEL
+
+#if 0
     u16 nv_item = LOG_CTL_INFO_ITEM;
     struct log_ctl ctl_info;
     int  rval = -1;
@@ -932,7 +933,7 @@ static int __init logger_init(void)
     /*regardless nv is on,create log devices, kernel control whether can write*/
     atomic_set(&log_switch, ctl_info.on_off_flag);
 #endif
-	
+          atomic_set(&log_switch, 1);	
 	ret = init_log(&log_main);
 	if (unlikely(ret))
 		goto out;

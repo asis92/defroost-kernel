@@ -83,7 +83,3 @@ obj-$(CONFIG_HUAWEI_FEATURE_AT42QT_TS)  += atmel_i2c_rmi_QT602240.o
 obj-$(CONFIG_HUAWEI_FEATURE_RMI_TOUCH)  += synaptics_i2c_rmi_1564.o hw_tp_config.o
 obj-$(CONFIG_HUAWEI_MELFAS_TOUCHSCREEN)  += melfas_i2c_ts.o
 obj-$(CONFIG_HUAWEI_GT968_TOUCHSCREEN)  += gt968.o goodix_tool.o gt968_update.o
-
-# For compile with GCC 4.7.4
-CFLAGS_synaptics_i2c_rmi_1564.o = -Wno-maybe-uninitialized
-

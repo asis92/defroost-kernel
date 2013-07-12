@@ -1693,45 +1693,6 @@ static int synaptics_rmi4_probe(
 				goto err_pdt_read_failed;
 			}
 		}
-		if (AUTO_UPDATE_FW == is_auto_update_fw())
-		{
-		    if(pr_version != syanptics_pr_version)
-		    {
-				for (i = 0 ; i < 2; i++) 
-				{
-					ret= syn_fw_update(g_ts->client);   
-					if (!ret)
-					{
-						break;
-					}
-				}	
-				if (touch_pdata->touch_reset())
-				{
-					ret = touch_pdata->touch_reset();
-					if (ret)
-					{
-						printk(KERN_ERR "%s: reset failed \n", __func__);
-						goto err_detect_failed;
-					}
-				}
-				ret = synaptics_rmi4_read_pdt(g_ts);
-				if (ret <= 0) 
-    			{
-					if (ret == 0)
-						printk(KERN_ERR "Empty PDT\n");
-
-					printk(KERN_ERR "FW updated,Error identifying device (%d)\n", ret);
-					ret = -ENODEV;
-					goto err_pdt_read_failed;
-				}
-				
-				if (syn_get_version() < 0)
-				{
-					printk(KERN_ERR "[TP] TOUCH_ERR: get_ic_fw_version fail \n");
-					goto err_pdt_read_failed;
-				}
-		    }
-		}
 
 /* Move up */
 		if (syn_get_version() < 0)
@@ -2549,7 +2510,6 @@ static ssize_t update_firmware_store(struct kobject *kobj, struct kobj_attribute
 		else 
 		{
 			printk("Update firmware success!\n");
-			arm_pm_restart(0,&ret);
 			ret = 1;
 		}
 	}

@@ -346,7 +346,7 @@ static struct config_tp * get_machine_config(void)
 	}
 	else if (machine_is_msm8x25_U8951D()
 	         || machine_is_msm8x25_U8951()
-	         || machine_is_msm8x25_C8951())
+	         || machine_is_msm8x25_C8813())
 	{
 		temp_config = TP_G510_CONFIG;
 	}

@@ -1077,7 +1077,7 @@ static int32_t s5k4e1_sensor_model_match(struct msm_sensor_ctrl_t *s_ctrl)
 
     if(s5k4e1_mode_type == S5k4E1_MODE_SAMSUNG)
     {
-        strncpy((char *)s_ctrl->sensor_name, "23060069FA-SAM-3", strlen("23060069FA-SAM-3"));
+        strncpy((char *)s_ctrl->sensor_name, "23060110FA-SAM-3", strlen("23060110FA-SAM-3"));
     }
     else
     {

@@ -263,7 +263,6 @@ static struct clkctl_acpu_speed pll0_960_pll1_245_pll2_1200_pll4_1209[] = {
 	#ifdef CONFIG_MSM8X25_OVERCLOCK
 	{ 1, 1152000, ACPU_PLL_4, 6, 0, 151200, 3, 6, 200000, &pll4_cfg_tbl[4]},
 	{ 1, 1209600, ACPU_PLL_4, 6, 0, 151200, 3, 6, 200000, &pll4_cfg_tbl[2]},
-	{ 1, 1401600, ACPU_PLL_4, 6, 0, 175000, 3, 7, 200000, &pll4_cfg_tbl[3]},
 	#endif
 	{ 0 }
 };
@@ -282,7 +281,6 @@ static struct clkctl_acpu_speed pll0_960_pll1_196_pll2_1200_pll4_1209[] = {
 	#ifdef CONFIG_MSM8X25_OVERCLOCK
 	{ 1, 1152000, ACPU_PLL_4, 6, 0, 151200, 3, 6, 200000, &pll4_cfg_tbl[4]},
 	{ 1, 1209600, ACPU_PLL_4, 6, 0, 151200, 3, 6, 200000, &pll4_cfg_tbl[2]},
-	{ 1, 1401600, ACPU_PLL_4, 6, 0, 175000, 3, 7, 200000, &pll4_cfg_tbl[3]},
 	#endif
 	{ 0 }
 };
